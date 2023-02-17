@@ -9,6 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Messanger">
         <activity
+            android:configChanges="orientation|screenSize"
             android:name=".ReceiveMessageActivity"
             android:exported="false">
             <intent-filter>
@@ -18,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity
+            android:configChanges="orientation|screenSize"
             android:name=".SendMessageActivity"
             android:exported="true">
             <intent-filter>
