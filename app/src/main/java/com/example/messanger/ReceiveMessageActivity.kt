@@ -14,7 +14,7 @@ class ReceiveMessageActivity : AppCompatActivity() {
         binding = ActivityReceiveMessageBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
+        // if we have state saved, use it
         if (savedInstanceState != null) {
             binding.receivedMessage.text = savedInstanceState.getString("message") ?: ""
             binding.dateField.text = savedInstanceState.getString("date") ?: ""
@@ -28,6 +28,7 @@ class ReceiveMessageActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+    // save state (message,date)
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putString("message",binding.receivedMessage.text.toString())
